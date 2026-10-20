@@ -1,0 +1,82 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{fontspec}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{luacolor}
+\usepackage{lua-ul}
+\usepackage[hidelinks]{hyperref}
+
+% -------------------------------------------------------------
+\definecolor{cFoster}{HTML}{FFE97A}
+\definecolor{cSalak}{HTML}{B8EBB0}
+\definecolor{cOussidi}{HTML}{AEDBFF}
+\definecolor{cHe}{HTML}{FFC2E2}
+
+\newcommand{\fos}[1]{\highLight[cFoster]{#1}}
+\newcommand{\sal}[1]{\highLight[cSalak]{#1}}
+\newcommand{\ous}[1]{\highLight[cOussidi]{#1}}
+\newcommand{\he}[1]{\highLight[cHe]{#1}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\title{¿Qué es la IA generativa?}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\fos{Foster (2019)} \quad \sal{Salakhutdinov (2015)} \quad \ous{Oussidi y Elhassouny (2018)} \quad \he{He, Cao y Tan (2025)}
+
+% ----------
+\section{Definición}
+
+\he{La IA generativa es un conjunto de algoritmos y modelos capaces de producir contenido nuevo, como texto, imágenes, video, código o estrategias, con una creatividad y adaptabilidad parecidas a las humanas (He et al., 2025).}
+
+\fos{Un modelo generativo describe cómo se genera un conjunto de datos mediante un modelo probabilístico, al muestrear de él se obtienen datos nuevos (Foster, 2019).} \ous{Es decir, busca capturar la distribución que genera una clase de datos para producir datos similares (Oussidi y Elhassouny, 2018).}
+
+% ----------
+\section{Idea principal}
+
+\fos{Se parte de observaciones $\mathbf{X}$ generadas por una distribución desconocida $p_{\text{data}}$. El modelo $p_{\text{model}}$ intenta imitarla, y es bueno si sus muestras parecen reales y no son copias de los datos de entrenamiento (Foster, 2019).}
+
+\fos{A diferencia de un modelo discriminativo, que estima $p(y \mid \mathbf{x})$, un modelo generativo estima $p(\mathbf{x})$, por eso suele entrenarse con datos sin etiquetar (Foster, 2019).}
+
+% ----------
+\section{Por qué el aprendizaje profundo}
+
+\sal{Las arquitecturas profundas, con muchas capas no lineales y variables latentes, pueden aprender representaciones complejas a partir de grandes cantidades de datos sin etiquetar (Salakhutdinov, 2015).} \fos{La clave es el espacio latente: describir cada dato con pocas dimensiones y aprender a mapearlas de vuelta al espacio original (Foster, 2019).}
+
+% ----------
+\section{Los modelos principales}
+
+\begin{itemize}
+  \item \sal{Máquinas de Boltzmann y redes de creencia profunda: modelos basados en energía con capas ocultas (Salakhutdinov, 2015).}
+  \item \ous{Autocodificadores variacionales (VAE): codifican los datos en un espacio latente gaussiano del que se puede muestrear (Oussidi y Elhassouny, 2018).}
+  \item \fos{Redes generativas adversarias (GAN): un generador y un discriminador compiten entre sí (Foster, 2019).}
+  \item \ous{Modelos autorregresivos: generan un elemento a la vez a partir de los anteriores (Oussidi y Elhassouny, 2018).}
+  \item \he{Modelos de difusión: aprenden a convertir ruido en datos (He et al., 2025).}
+  \item \he{Transformers y modelos fundacionales: entrenados a gran escala y adaptables a muchas tareas, como GPT (He et al., 2025).}
+\end{itemize}
+
+% ----------
+\section{Conclusión}
+
+La IA generativa \he{crea contenido nuevo} al \fos{aprender cómo son los datos y generar ejemplos parecidos}. No copia, aprende sus patrones. \he{Sus retos incluyen las alucinaciones, el costo y el uso indebido (He et al., 2025).}
+
+% ----------
+\section*{Referencias}
+
+\fos{Foster, D. (2019). \emph{Generative Deep Learning}. O'Reilly Media.}
+
+\sal{Salakhutdinov, R. (2015). Learning Deep Generative Models. \emph{Annual Review of Statistics and Its Application}, 2, 361--385.}
+
+\ous{Oussidi, A. y Elhassouny, A. (2018). Deep Generative Models: Survey. \emph{ISCV 2018}, IEEE.}
+
+\he{He, R., Cao, J. y Tan, T. (2025). Generative Artificial Intelligence: A Historical Perspective. \emph{National Science Review}, 12(5).}
+
+\end{document}
