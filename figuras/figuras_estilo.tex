@@ -1,0 +1,27 @@
+% Paquetes, estilos y macros compartidos por las figuras
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\tikzset{
+  flecha/.style={-{Stealth[length=2.2mm]}, thick},
+  caja/.style={draw, thick, align=center, minimum height=1.25cm, text width=3.2cm, font=\small},
+  obs/.style={circle, fill=black, inner sep=0pt, minimum size=1.5mm},
+  muestra/.style={rectangle, draw, thick, fill=white, inner sep=0pt, minimum size=2.1mm},
+  hueco/.style={circle, draw=black!60, fill=white, inner sep=0pt, minimum size=1.5mm},
+}
+
+% Imagen de 16 x 16 píxeles de una lata: x, y, anchura y altura en píxeles
+\newcommand{\lata}[4]{%
+  \begin{scope}[shift={(#1,#2)},x=0.09cm,y=0.09cm]
+    \pgfmathtruncatemacro{\lizq}{(16-#3)/2}
+    \pgfmathtruncatemacro{\lder}{\lizq+#3}
+    \pgfmathtruncatemacro{\ltope}{2+#4}
+    \pgfmathtruncatemacro{\lborde}{\ltope-2}
+    \fill[black!7] (0,0) rectangle (16,16);
+    \fill[black!58] (\lizq,2) rectangle (\lder,\ltope);
+    \fill[black!30] (\lizq,\lborde) rectangle (\lder,\ltope);
+    \fill[black!78] (\lizq,2) rectangle (\lder,3);
+    \draw[white, line width=0.15pt] (0,0) grid (16,16);
+    \draw[black!60, line width=0.4pt] (0,0) rectangle (16,16);
+  \end{scope}%
+}

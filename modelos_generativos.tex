@@ -10,7 +10,7 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
-\input{../figuras_estilo.tex}
+\input{figuras/figuras_estilo.tex}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.6em}
@@ -74,7 +74,7 @@ La Figura~\ref{fig:proceso} resume este proceso.
 
 \begin{figure}[H]
   \centering
-  \input{../figura_proceso.tex}
+  \input{figuras/figura_proceso.tex}
   \caption{Un modelo generativo se ajusta a partir de observaciones de una distribución desconocida, la imita y permite muestrear datos nuevos}
   \label{fig:proceso}
 \end{figure}
@@ -106,7 +106,7 @@ La Figura~\ref{fig:muestras} ilustra estas dos condiciones.
 
 \begin{figure}[H]
   \centering
-  \input{../figura_muestras.tex}
+  \input{figuras/figura_muestras.tex}
   \caption{El modelo $\ptheta$ aproxima a $\pdata$ y una buena muestra, como $C$, parece real sin copiar los datos de entrenamiento, con base en las reglas de Foster (2019)}
   \label{fig:muestras}
 \end{figure}
@@ -150,7 +150,7 @@ La Figura~\ref{fig:latas} ilustra esta definición con el ejemplo de las latas.
 
 \begin{figure}[H]
   \centering
-  \input{../figura_latas.tex}
+  \input{figuras/figura_latas.tex}
   \caption{Cada imagen de $16 \times 16$ píxeles tiene $d = 256$ valores, pero se puede describir con $k = 2$ variables latentes, la anchura y la altura de la lata, con base en el ejemplo de Foster (2019)}
   \label{fig:latas}
 \end{figure}
@@ -159,7 +159,7 @@ En términos matemáticos, se busca la variedad no lineal sobre la que se encuen
 
 \begin{figure}[H]
   \centering
-  \input{../figura_variedad.tex}
+  \input{figuras/figura_variedad.tex}
   \caption{Los datos válidos se concentran en una variedad de baja dimensión dentro de $\mathbb{R}^{d}$, dibujado aquí en tres dimensiones, y $G$ lleva el espacio latente a esa variedad, con base en Foster (2019)}
   \label{fig:variedad}
 \end{figure}

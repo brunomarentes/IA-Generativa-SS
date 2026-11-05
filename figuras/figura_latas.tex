@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+  % Plano latente
+  \begin{scope}[x=0.25cm,y=0.25cm]
+    \draw[-{Stealth[length=1.8mm]}] (0,0) -- (17,0) node[below left, font=\footnotesize] {$z_1$: anchura};
+    \draw[-{Stealth[length=1.8mm]}] (0,0) -- (0,17) node[above, font=\footnotesize] {$z_2$: altura};
+    \foreach \p in {(3,4),(4,9),(5,14),(8,3),(8,13),(11,10),(12,13),(14,9)}
+      \node[hueco] at \p {};
+    \node[obs, minimum size=2mm, label={[font=\small]above:$\bz_a$}] at (6,11) {};
+    \node[obs, minimum size=2mm, label={[font=\small]above:$\bz_b$}] at (10,7) {};
+    \node[obs, minimum size=2mm, label={[font=\small]above:$\bz_c$}] at (14,4) {};
+  \end{scope}
+  \node[font=\small, align=center] at (2.1,-1.05) {Espacio latente\\ $\mathcal{Z} \subseteq \mathbb{R}^{2}$};
+  % Generador
+  \draw[flecha] (4.75,2.1) -- node[above, font=\small] {$G$} (6.55,2.1);
+  % Imágenes
+  \lata{7}{3.3}{6}{11}
+  \lata{7}{1.45}{10}{7}
+  \lata{7}{-0.4}{14}{4}
+  \node[font=\small, right] at (8.5,4.02) {$G(\bz_a)$};
+  \node[font=\small, right] at (8.5,2.17) {$G(\bz_b)$};
+  \node[font=\small, right] at (8.5,0.32) {$G(\bz_c)$};
+  \node[font=\small, align=center] at (7.75,-1.05) {Espacio de datos\\ $\mathcal{X} \subseteq \mathbb{R}^{256}$};
+\end{tikzpicture}

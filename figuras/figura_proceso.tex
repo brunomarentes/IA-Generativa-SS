@@ -1,0 +1,10 @@
+\begin{tikzpicture}[node distance=1.15cm]
+  \node[caja, fill=black!8, dashed] (pdata) {Distribución desconocida\\[2pt] $\pdata$};
+  \node[caja, right=of pdata] (datos) {Datos de entrenamiento\\[2pt] \mbox{$\bX = \{\bx_1, \dots, \bx_N\}$}};
+  \node[caja, right=of datos, fill=black!8] (modelo) {Modelo probabilístico\\[2pt] $\ptheta$};
+  \node[caja, below=1.0cm of modelo] (nuevos) {Datos nuevos\\[2pt] \mbox{$\bx \sim \ptheta$}};
+  \draw[flecha] (pdata) -- node[above, font=\footnotesize] {genera} (datos);
+  \draw[flecha] (datos) -- node[above, font=\footnotesize] {ajuste} node[below, font=\footnotesize] {de $\theta$} (modelo);
+  \draw[flecha] (modelo) -- node[right, font=\footnotesize] {muestreo} (nuevos);
+  \draw[flecha, dashed] (modelo.north) -- ++(0,0.55) -| node[pos=0.25, above, font=\footnotesize] {imita} (pdata.north);
+\end{tikzpicture}
